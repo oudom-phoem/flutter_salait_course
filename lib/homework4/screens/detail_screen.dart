@@ -19,16 +19,18 @@ class DetailScreen extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.4,
                 width: double.infinity,
                 child: ShaderMask(
-                    shaderCallback: (rect) {
-                      return LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [Colors.black, Colors.transparent],
-                      ).createShader(
-                          Rect.fromLTRB(0, 0, rect.width, rect.height));
-                    },
-                    blendMode: BlendMode.dstIn,
-                    child: Image.network(imgUrl, fit: BoxFit.cover)),
+                  shaderCallback: (rect) {
+                    return const LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [Colors.black, Colors.transparent],
+                    ).createShader(
+                      Rect.fromLTRB(0, 0, rect.width, rect.height),
+                    );
+                  },
+                  blendMode: BlendMode.dstIn,
+                  child: Image.network(imgUrl, fit: BoxFit.cover),
+                ),
               ),
               // Icon over Image
               Padding(
