@@ -31,9 +31,9 @@ class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 0;
   final List<Widget> _screens = [
     HomeScreen(),
-    FriendsScreen(),
-    FeedsScreen(),
-    ProfileScreen(),
+    const FriendsScreen(),
+    const FeedsScreen(),
+    const ProfileScreen(),
   ];
 
   void _onTabTapped(int index) {
